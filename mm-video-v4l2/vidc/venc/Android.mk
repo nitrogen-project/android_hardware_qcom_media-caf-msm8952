@@ -92,6 +92,8 @@ LOCAL_SHARED_LIBRARIES    := liblog libutils libbinder libcutils \
 LOCAL_SHARED_LIBRARIES += libqdMetaData
 LOCAL_STATIC_LIBRARIES    := libOmxVidcCommon
 
+LOCAL_SHARED_LIBRARIES    += libnativewindow
+
 LOCAL_SRC_FILES   := src/omx_video_base.cpp
 LOCAL_SRC_FILES   += src/omx_video_encoder.cpp
 LOCAL_SRC_FILES   += src/video_encoder_device_v4l2.cpp
