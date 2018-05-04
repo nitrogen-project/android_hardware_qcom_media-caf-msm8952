@@ -64,6 +64,11 @@ libmm-vdec-inc          += $(TOP)/frameworks/native/include/media/openmax
 libmm-vdec-inc          += $(TOP)/frameworks/native/include/media/hardware
 libmm-vdec-inc      	+= $(QCOM_MEDIA_ROOT)/libc2dcolorconvert
 libmm-vdec-inc      	+= $(TOP)/frameworks/av/include/media/stagefright
+ifeq ($(call is-platform-sdk-version-at-least,27),true) #O_MR1
+libmm-vdec-inc          += $(TOP)/frameworks/native/libs/nativewindow/include
+libmm-vdec-inc          += $(TOP)/frameworks/native/libs/arect/include
+libmm-vdec-inc          += $(TOP)/frameworks/native/libs/nativebase/include
+endif
 libmm-vdec-inc      	+= $(TARGET_OUT_HEADERS)/mm-video/SwVdec
 ifeq ($(TARGET_COMPILE_WITH_MSM_KERNEL),true)
 libmm-vdec-inc      	+= $(TARGET_OUT_INTERMEDIATES)/KERNEL_OBJ/usr/include
